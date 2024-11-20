@@ -2,12 +2,10 @@ version: "3.8"
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: python:3.10-slim
     ports:
-      - "4000:4000" # Map container port 4000 to host port 4000
-    environment:
-      - FLASK_ENV=production
-      - PORT=4000 # Optional: if your Flask app reads the port from environment variables
-    restart: always
+      - "4000:4000"
+    volumes:
+      - .:/app # Mount the current directory into the container
+    working_dir: /app # Set the working directory inside the container
+    command: python main.py # Command to run your Flask app
