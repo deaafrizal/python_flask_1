@@ -1,0 +1,8 @@
+[dependencies]
+runtime = "python:3.10"
+
+[phases.setup]
+commands = ["pip install -r requirements.txt"]
+
+[phases.start]
+commands = ["gunicorn -w 4 -b 0.0.0.0:4000 main:app"]
