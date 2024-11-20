@@ -1,17 +1,14 @@
-# Use an official Python image
-FROM python:3.10-slim
+version: "3.8"
 
-# Set the working directory
-WORKDIR /app
-
-# Copy the application files
-COPY . .
-
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Expose the Flask port
-EXPOSE 4000
-
-# Command to run the Flask app using gunicorn
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:4000", "main:app"]
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000" # Map container's port 5000 to host's port 5000
+    volumes:
+      - .:/app # Mount the current directory to the container
+    environment:
+      - FLASK_ENV=production
+    restart: always
