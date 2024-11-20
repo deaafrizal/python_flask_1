@@ -6,9 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "4000:4000" # Map container's port 5000 to host's port 5000
-    volumes:
-      - .:/app # Mount the current directory to the container
+      - "4000:4000" # Map container port 4000 to host port 4000
     environment:
       - FLASK_ENV=production
+      - PORT=4000 # Optional: if your Flask app reads the port from environment variables
     restart: always
