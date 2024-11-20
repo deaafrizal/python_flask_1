@@ -1,7 +1,10 @@
-FROM python:3.11-alpine
-COPY . /app
-WORKDIR /app
+FROM python:3.12-slim-buster
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt .
 RUN pip install -r requirements.txt
-EXPOSE 4000
-ENTRYPOINT ["python"]
-CMD ["main.py"]
+
+COPY . .
+
+CMD ["python", "main.py"]
