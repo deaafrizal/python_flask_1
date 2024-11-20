@@ -2,11 +2,11 @@ version: "3.8"
 
 services:
   web:
-    image: python:3.10-slim # Use the lightweight Python image
+    image: python:3.10-slim
     ports:
-      - "4000:4000" # Expose Flask app on port 4000
+      - "4000:4000"
     volumes:
-      - .:/app # Mount your project folder to /app in the container
-    working_dir: /app # Set working directory inside the container
-    command: bash -c "pip install -r requirements.txt && python main.py" # Install Flask and run the app
-    restart: unless-stopped # Restart automatically if it crashes
+      - .:/app # Mount your project directory into /app
+    working_dir: /app # Set the working directory inside the container
+    command: bash -c "pip install -r requirements.txt && python main.py" # Install dependencies and run Flask
+    restart: unless-stopped
