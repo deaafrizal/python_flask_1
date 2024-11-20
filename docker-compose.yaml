@@ -4,8 +4,9 @@ services:
   web:
     image: python:3.10-slim
     ports:
-      - "4000:4000"
+      - "4000:4000" # Map port 4000 from the container to the host
     volumes:
-      - .:/app # Mount the current directory into the container
+      - .:/app # Mount the current directory into /app inside the container
     working_dir: /app # Set the working directory inside the container
     command: python main.py # Command to run your Flask app
+    restart: unless-stopped # Restart the container if it crashes
