@@ -1,11 +1,22 @@
+import os
 from groq import Groq
-
 from flask import Flask, render_template, request
 from datetime import datetime
 
 app = Flask(__name__)
 
-AI_KEY = ""
+### HARDCODED AI_KEY TUTORIAL VERSION ###
+# AI_KEY = "masukan api key groq disini" #
+###  -------------------------------- ###
+
+AI_KEY = os.getenv(
+    "GROQ_API_KEY"
+)  # komentari kode ini jika tidak menyiapkan enviroment spesifik.
+
+if not AI_KEY:
+    raise ValueError(
+        "Masukan GROQ API KEY ke environment masing2 atau pake hardcoded version."
+    )
 
 client = Groq(
     api_key=AI_KEY,
@@ -52,4 +63,4 @@ def cek_usia():
     return render_template('cek_usia.html', usia= None)
     
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=89)
+    app.run(host="0.0.0.0")
