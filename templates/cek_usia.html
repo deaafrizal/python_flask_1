@@ -19,6 +19,11 @@
         <h2>Hasil</h2>
         <p>Tahun Lahir: {{ tahun_lahir }}</p>
         <p>Usia Anda: {{ usia }} tahun</p>
+        <hr/>
+        <div class="fakta">
+            <h3>Fakta Menarik Pada Tahun Lahir anda</h3>
+            <p> {{ ai_output }}</p>
+        </div>
     {% elif usia is not none and usia <= 0 %}
         <p>Masukkan tahun lahir yang valid</p>
     {% endif %}

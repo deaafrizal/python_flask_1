@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    font-size: larger;
 }
 
 /* Center Content */
@@ -30,6 +31,18 @@ p {
     font-size: 16px;
     margin: 10px 0;
     text-align: center;
+}
+
+.fakta {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fakta p {
+    text-align: left;
 }
 
 /* Form Styles */
