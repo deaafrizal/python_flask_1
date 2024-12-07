@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Usia</title>
+    <title>Dea Afrizal | Flask Python Web Project</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Selamat Datang</h1>
-    <p>Masukkan tahun lahir Anda untuk menghitung usia.</p>
-    <a href="/usia">Hitung Usia</a>
+    <h1 class="headline_news">Top Headline Terkini</h1>
+    <div class="news">
+        <div>
+            <label>from kompas:</label>
+            <p>{{ news1 }}</p>   
+        </div>
+        <div>
+            <label>from detik:</label>
+            <p>{{ news2 }}</p>   
+        </div>
+        <div>
+            <label>from tribun:</label>
+            <p>{{ news3 }}</p>
+        </div>
+    </div>
+    <footer>
+        <a href="/usia">Hitung Usia App</a>
+    </footer>
 </body>
 </html>

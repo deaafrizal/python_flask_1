@@ -3,9 +3,32 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #f4f4f9;
     color: #333;
     font-size: larger;
+}
+
+.news {
+    width: 100%;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.news div{
+    background-color: #333;
+    padding: 16px;
+}
+
+.news div label {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.news div p {
+    text-align: left;
 }
 
 /* Center Content */
@@ -98,4 +121,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
